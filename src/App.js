@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div style={{ padding: '20px' }}>
-      <h2>Gemini AI 코드 리뷰 히스토리</h2>
+      <h2>! Gemini AI 코드 리뷰 히스토리 !</h2>
       {reviews.length === 0 ? (
         <p>리뷰가 없습니다.</p>
       ) : (
