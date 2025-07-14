@@ -1,0 +1,30 @@
+name: Build and Push React Image to GHCR
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - '**.js'
+      - '**.jsx'
+      - 'Dockerfile'
+      - 'package*.json'
+      - '.github/workflows/**'
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Log in to GHCR
+        run: echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u ${{ secrets.GHCR_USERNAME }} --password-stdin
+
+      - name: Build Docker image
+        run: |
+          docker build -t ghcr.io/${{ secrets.GHCR_USERNAME }}/react-app:latest .
+
+      - name: Push to GHCR
+        run: |
+          docker push ghcr.io/${{ secrets.GHCR_USERNAME }}/react-app:latest
