@@ -42,8 +42,8 @@ function App() {
                       overflow: 'hidden',
                       textOverflow: 'ellipsis',
                       background: '#f7f7f7',
-                      padding: '10px',  
-                      maxWidth: '100%',  
+                      padding: '10px',
+                      maxWidth: '100%',
                     }}>
                       {review.diff.split('\n')[0]}  
                     </pre>
