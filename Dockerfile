@@ -10,8 +10,8 @@ RUN npm run build
 FROM nginx:stable-alpine
 COPY --from=builder /app/build /usr/share/nginx/html
 
-# NGINX 설정 파일 복사 (선택사항)
-# COPY nginx.conf /etc/nginx/nginx.conf
+# NGINX 설정 파일 복사
+COPY public/nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
 
