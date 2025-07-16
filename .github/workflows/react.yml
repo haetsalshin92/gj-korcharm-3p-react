@@ -21,9 +21,21 @@ jobs:
       - name: Log in to GHCR
         run: echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u ${{ secrets.GHCR_USERNAME }} --password-stdin
 
+      - name: Check current directory and files
+        run: |
+          pwd
+          ls -al
+          ls -al nginx
+
       - name: Build Docker image
         run: |
           docker build -t ghcr.io/${{ secrets.GHCR_USERNAME }}/react-app:latest .
+
+      - name: Check current directory and files2
+        run: |
+          pwd
+          ls -al
+          ls -al nginx
 
       - name: Push to GHCR
         run: |
