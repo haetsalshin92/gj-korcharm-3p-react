@@ -45,7 +45,7 @@ function App() {
                       padding: '10px',
                       maxWidth: '100%',
                     }}>
-                      {review.diff.split('\n')[0]}
+                      {review.diff.split('\n')[0]}  
                     </pre>
                   )}
                 </div>
