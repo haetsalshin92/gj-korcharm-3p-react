@@ -50,8 +50,9 @@ Diff2Html을 활용해 코드 변경(diff)을 보기 좋게 렌더링하며, 리
    "createdAt": "2024-06-10T12:34:56Z"
  }
   ]
+ ```
 
-참고
+## 참고
 코드 diff 시각화: diff2html
 React 공식문서: https://reactjs.org/
 
