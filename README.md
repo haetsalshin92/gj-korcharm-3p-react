@@ -37,23 +37,22 @@ Diff2Html을 활용해 코드 변경(diff)을 보기 좋게 렌더링하며, 리
    npm run build
 4. Docker로 빌드 및 실행
    docker build -t gemini-ai-review . docker run -p 80:80 gemini-ai-review
+
+
 ## API 예시
 
 - `/api/reviews`  
   ```json
   [
- {
-   "id": 1,
-   "prNumber": 42,
-   "diff": "diff --git ...",
-   "review": "코드가 잘 작성되었습니다.",
-   "createdAt": "2024-06-10T12:34:56Z"
- }
+    {
+      "id": 1,
+      "prNumber": 42,
+      "diff": "diff --git ...",
+      "review": "코드가 잘 작성되었습니다.",
+      "createdAt": "2024-06-10T12:34:56Z"
+    }
   ]
- ```
 
 ## 참고
-코드 diff 시각화: diff2html
-React 공식문서: https://reactjs.org/
-
-이 README는 [App.js](http://_vscodecontentref_/1)와 프로젝트 구조를
+- 코드 diff 시각화: diff2html
+- React 공식문서: https://reactjs.org/
