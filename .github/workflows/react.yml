@@ -9,6 +9,7 @@ on:
       - 'Dockerfile'
       - 'package*.json'
       - '.github/workflows/**'
+      - '**.conf'
 
 jobs:
   build-and-push:
