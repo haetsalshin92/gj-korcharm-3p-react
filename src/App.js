@@ -4,6 +4,7 @@ import axios from 'axios';
 // 수정 후:
 import { html as diff2htmlHtml } from 'diff2html'; // 'html' 함수를 'diff2htmlHtml'로 이름 변경하여 임포트
 import 'diff2html/bundles/css/diff2html.min.css';
+import ReactMarkdown from 'react-markdown';
 
 function App() {
   const [reviews, setReviews] = useState([]);
@@ -70,7 +71,9 @@ function App() {
                 </div>
 
                 <strong>리뷰 내용:</strong>
-                <pre style={{ whiteSpace: 'pre-wrap', background: '#eef', padding: '10px' }}>{review.review}</pre>
+                <div style={{ background: '#f8f9fa', padding: '10px', borderRadius: '8px' }}>
+                  <ReactMarkdown>{review.review}</ReactMarkdown>
+                </div>
                 <small>작성일: {new Date(review.createdAt).toLocaleString()}</small>
               </li>
             );
